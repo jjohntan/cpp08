@@ -14,11 +14,17 @@
 # define EASYFIND_HPP
 
 #include <algorithm>
+#include <vector>
 
 template <typename T>
- easyfind(T &container, int value)
+void easyfind(T &container, int occurrence)
 {
-	
+	typename T::iterator i;
+	i = std::find(container.begin(), container.end(), occurrence);
+	if (i == container.end())
+	{
+		std::cout << "hello" << std::endl;
+	}
 }
 
 #endif
