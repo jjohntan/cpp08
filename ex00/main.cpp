@@ -12,6 +12,11 @@
 
 #include "easyfind.hpp"
 
+const char *NoOccurrenceException::what() const throw()
+{
+	return "no occurrence is found";
+}
+
 int main()
 {
 	std::vector<int> v;
@@ -20,5 +25,13 @@ int main()
 	{
 		v.push_back(i);
 	}
-	easyfind(v, 11);
+	try
+	{
+		easyfind(v, 11);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 }

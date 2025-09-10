@@ -15,6 +15,13 @@
 
 #include <algorithm>
 #include <vector>
+#include <iostream>
+
+class NoOccurrenceException: public std::exception
+{
+public:
+	const char *what() const throw();
+};
 
 template <typename T>
 void easyfind(T &container, int occurrence)
@@ -23,7 +30,8 @@ void easyfind(T &container, int occurrence)
 	i = std::find(container.begin(), container.end(), occurrence);
 	if (i == container.end())
 	{
-		std::cout << "hello" << std::endl;
+		throw NoOccurrenceException();
+		return;
 	}
 }
 
