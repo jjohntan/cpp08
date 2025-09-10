@@ -25,6 +25,16 @@ int main()
 	{
 		v.push_back(i);
 	}
+	
+	try
+	{
+		easyfind(v, 5);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 	try
 	{
 		easyfind(v, 11);
@@ -33,5 +43,5 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 }

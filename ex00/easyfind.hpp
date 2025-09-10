@@ -27,7 +27,9 @@ template <typename T>
 void easyfind(T &container, int occurrence)
 {
 	typename T::iterator i;
+	
 	i = std::find(container.begin(), container.end(), occurrence);
+	
 	if (i == container.end())
 	{
 		throw NoOccurrenceException();
