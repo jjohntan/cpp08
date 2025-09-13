@@ -6,11 +6,18 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/12 18:30:16 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/13 18:00:59 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+int	Span::shortestSpan()
+{
+	if (container.size() < 2)
+		throw;
+	
+}
 
 void Span::addNumber(unsigned int num)
 {
@@ -26,7 +33,7 @@ Span::Span(unsigned int _n)
 	this->N = _n;
 }
 
-Span::Span(const Span &other): N(other.N) ,container(other) {}
+Span::Span(const Span &other): N(other.N) ,container(other.container) {}
 
 Span &Span::operator=(const Span &other)
 {

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 16:50:32 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/12 18:29:08 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/13 16:59:15 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Span &operator=(const Span &other);
 	~Span();
 	void addNumber(unsigned int num);
-	// shortestSpan();
+	int shortestSpan();
 	// longestSpan();
 	// addManyNumbers();
 		
