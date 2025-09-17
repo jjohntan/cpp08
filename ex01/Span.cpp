@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 16:54:21 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 17:14:20 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,20 @@ const char *Span::fillException::what() const throw()
 {
 	return "Already N elements stored";
 }
-// find out the shortest span, between all the numbers stored, and return it
+
+// ind out the longest span between all the numbers stored, and return it
+int Span::longestSpan()
+{
+	if (this->container.size() < 2)
+		throw notFoundException();
+		
+	std::sort(this->container.begin(), this->container.end());
+	
+	unsigned int span = this->container.back() - this->container.front();
+	return span;
+}
+
+// find out the shortest span between all the numbers stored, and return it
 int	Span::shortestSpan()
 {
 	if (this->container.size() < 2)
