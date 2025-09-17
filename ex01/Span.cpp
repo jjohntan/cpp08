@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 17:14:20 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 18:29:35 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,14 @@ const char *Span::fillException::what() const throw()
 	return "Already N elements stored";
 }
 
-// ind out the longest span between all the numbers stored, and return it
+void Span::addManyNumbers()
+{
+	if (this->container.size() >= N)
+		throw fillException();
+	
+}
+
+// find out the longest span between all the numbers stored, and return it
 int Span::longestSpan()
 {
 	if (this->container.size() < 2)
