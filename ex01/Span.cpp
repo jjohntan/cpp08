@@ -6,23 +6,41 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/13 18:00:59 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 15:56:15 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
+
+const char *Span::fillException::what() const throw()
+{
+	return "Already N elements stored";
+}
+
+// Max - min
 int	Span::shortestSpan()
 {
-	if (container.size() < 2)
-		throw;
+	if (this->container.size() < 2)
+		// throw;
 	
+	std::sort(this->container.begin(), this->container.end());
+	int span = container[1] - container[0];
+	for (unsigned int i = 1; i < this->container.size(); i++)
+	{
+		int nextPair = this->container[i + 1] - this->container[i];
+		if (nextPair < span)
+		{
+			span = nextPair;
+		}
+	}
+	return span;
 }
 
 void Span::addNumber(unsigned int num)
 {
 	if (this->container.size() >= N)
-		throw fullException();
+		throw fillException();
 	this->container.push_back(num);
 }
 

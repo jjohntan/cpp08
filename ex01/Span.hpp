@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 16:50:32 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/13 16:59:15 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 15:49:25 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
+// Span = distance
 class Span
 {
 private:
@@ -33,7 +35,7 @@ public:
 	// longestSpan();
 	// addManyNumbers();
 		
-	class fullException: public std::exception
+	class fillException: public std::exception
 	{
 		public:
 			const char *what() const throw();
