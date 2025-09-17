@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 16:50:32 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 15:49:25 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 16:09:57 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ public:
 	// addManyNumbers();
 		
 	class fillException: public std::exception
+	{
+		public:
+			const char *what() const throw();
+	};
+	
+	class notFoundException: public std::exception
 	{
 		public:
 			const char *what() const throw();

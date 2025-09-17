@@ -6,12 +6,16 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 15:56:15 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 16:28:02 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
+const char *Span::notFoundException::what() const throw()
+{	
+	return "No numbers stored, or only one, no span can be found";
+}
 
 const char *Span::fillException::what() const throw()
 {
@@ -22,13 +26,14 @@ const char *Span::fillException::what() const throw()
 int	Span::shortestSpan()
 {
 	if (this->container.size() < 2)
-		// throw;
+		throw notFoundException();
 	
 	std::sort(this->container.begin(), this->container.end());
-	int span = container[1] - container[0];
+	
+	unsigned int span = container[1] - container[0];
 	for (unsigned int i = 1; i < this->container.size(); i++)
 	{
-		int nextPair = this->container[i + 1] - this->container[i];
+		unsigned int nextPair = this->container[i + 1] - this->container[i];
 		if (nextPair < span)
 		{
 			span = nextPair;
