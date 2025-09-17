@@ -6,23 +6,24 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 16:28:02 by jetan            ###   ########.fr       */
+/*   Updated: 2025/09/17 16:54:21 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
+// If there are no numbers stored, or only one, no span can be found
 const char *Span::notFoundException::what() const throw()
 {	
 	return "No numbers stored, or only one, no span can be found";
 }
 
+// any attempt to add a new element if there are already N elements stored
 const char *Span::fillException::what() const throw()
 {
 	return "Already N elements stored";
 }
-
-// Max - min
+// find out the shortest span, between all the numbers stored, and return it
 int	Span::shortestSpan()
 {
 	if (this->container.size() < 2)
