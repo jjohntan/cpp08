@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 18:29:35 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/03 18:20:51 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ const char *Span::fillException::what() const throw()
 	return "Already N elements stored";
 }
 
-void Span::addManyNumbers()
+void Span::addManyNumbers(std::vector<int> nbr)
 {
-	if (this->container.size() >= N)
+	if (nbr.size() + this->container.size() > N)
 		throw fillException();
-	
+	for (std::vector<int>::iterator it = nbr.begin(); it < nbr.end(); it++)
+	{
+		addNumber(*it);
+	}
 }
 
 // find out the longest span between all the numbers stored, and return it
@@ -54,20 +57,20 @@ int	Span::shortestSpan()
 	unsigned int span = container[1] - container[0];
 	for (unsigned int i = 1; i < this->container.size(); i++)
 	{
-		unsigned int nextPair = this->container[i + 1] - this->container[i];
-		if (nextPair < span)
+		unsigned int next_pair = this->container[i + 1] - this->container[i];
+		if (next_pair < span)
 		{
-			span = nextPair;
+			span = next_pair;
 		}
 	}
 	return span;
 }
 
-void Span::addNumber(unsigned int num)
+void Span::addNumber(unsigned int nbr)
 {
 	if (this->container.size() >= N)
 		throw fillException();
-	this->container.push_back(num);
+	this->container.push_back(nbr);
 }
 
 Span::Span(): N(0) {}

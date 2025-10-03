@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 16:50:32 by jetan             #+#    #+#             */
-/*   Updated: 2025/09/17 17:56:18 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/03 20:21:52 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	void addNumber(unsigned int num);
 	int shortestSpan();
 	int longestSpan();
-	void addManyNumbers();
+	void addManyNumbers(std::vector<int> nbr);
 		
 	class fillException: public std::exception
 	{
