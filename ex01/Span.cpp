@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/03 18:20:51 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/06 17:24:39 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ const char *Span::notFoundException::what() const throw()
 const char *Span::fillException::what() const throw()
 {
 	return "Already N elements stored";
+}
+
+void Span::printValue()
+{
+	for (std::vector<int>::iterator it = this->container.begin(); it < this->container.end(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
 }
 
 void Span::addManyNumbers(std::vector<int> nbr)
@@ -40,8 +48,9 @@ int Span::longestSpan()
 	if (this->container.size() < 2)
 		throw notFoundException();
 		
-	std::sort(this->container.begin(), this->container.end());
+	std::sort(this->container.begin(), this->container.end());// sort the number
 	
+	// find the difference between biggest number and smallest number
 	unsigned int span = this->container.back() - this->container.front();
 	return span;
 }
@@ -52,28 +61,30 @@ int	Span::shortestSpan()
 	if (this->container.size() < 2)
 		throw notFoundException();
 	
-	std::sort(this->container.begin(), this->container.end());
+	std::sort(this->container.begin(), this->container.end());// sort the number
 	
 	unsigned int span = container[1] - container[0];
+	
+	// loop over the rest
 	for (unsigned int i = 1; i < this->container.size(); i++)
 	{
-		unsigned int next_pair = this->container[i + 1] - this->container[i];
-		if (next_pair < span)
+		unsigned int next = this->container[i + 1] - this->container[i];
+		if (next < span)
 		{
-			span = next_pair;
+			span = next;
 		}
 	}
 	return span;
 }
 
-void Span::addNumber(unsigned int nbr)
+void Span::addNumber(int nbr)
 {
 	if (this->container.size() >= N)
 		throw fillException();
 	this->container.push_back(nbr);
 }
 
-Span::Span(): N(0) {}
+Span::Span(): N(2) {}
 
 Span::Span(unsigned int _n)
 {

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 16:50:32 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/03 20:21:52 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/06 17:23:55 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ public:
 	Span(const Span &other);
 	Span &operator=(const Span &other);
 	~Span();
-	void addNumber(unsigned int num);
+	void addNumber(int num);
 	int shortestSpan();
 	int longestSpan();
 	void addManyNumbers(std::vector<int> nbr);
-		
+	void printValue();
+	
 	class fillException: public std::exception
 	{
 		public:
