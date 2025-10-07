@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:44:13 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/06 20:27:00 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/07 16:25:22 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void manyNumberstest()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	
 	std::cout << "-----------------------" << std::endl;
@@ -58,13 +58,21 @@ void TenKtest()
 	std::cout << "---------TenKtest----------" << std::endl;
 	
 	Span tenk = Span(10000);
+	std::vector<int> arr_nbr;
 	
 	for (int i = 0; i < 10000; i++)
 	{
-		tenk.addNumber(i);
+		arr_nbr.push_back(i);
 	}
-	
-	// tenk.printValue();
+	try
+	{
+		tenk.addManyNumbers(arr_nbr);
+		// tenk.printValue();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 void OCFtest()
