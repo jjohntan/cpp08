@@ -6,18 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:45:55 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/08 15:00:37 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/09 13:53:19 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-
-void OCFtest()
-{
-	MutantStack dc;
-	MutantStack cc;
-	MutantStack cao = cc;
-}
 
 int main()
 {
