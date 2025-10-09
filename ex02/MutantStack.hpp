@@ -6,13 +6,15 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:40:25 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/09 14:47:51 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:44:41 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
+#include <vector>
+#include <list>
 #include <stack>
 #include <iostream>
 
