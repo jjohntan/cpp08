@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:28:26 by jetan             #+#    #+#             */
-/*   Updated: 2025/07/01 19:39:29 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/10 14:55:28 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main()
 	try
 	{
 		easyfind(v, 5);
+		std::cout << "Found" << std::endl; 
 	}
 	catch(const std::exception& e)
 	{
@@ -38,6 +39,7 @@ int main()
 	try
 	{
 		easyfind(v, 11);
+		std::cout << "Found" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
