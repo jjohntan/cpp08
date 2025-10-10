@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:45:55 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/09 17:43:06 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/10 13:25:48 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ mstack.pop_back();// removes an element from the end of the vector
 
 std::cout << mstack.size() << std::endl;
 
-mstack.push_back(3);
+mstack.push_back(3);// add an element at the end of the vector
 mstack.push_back(5);
 mstack.push_back(737);
 //[...]
@@ -59,7 +59,7 @@ mstack.pop_back();// remove last element
 
 std::cout << mstack.size() << std::endl;
 
-mstack.push_back(3);
+mstack.push_back(3);// Add an element at the end
 mstack.push_back(5);
 mstack.push_back(737);
 //[...]

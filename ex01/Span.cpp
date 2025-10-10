@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 17:30:21 by jetan             #+#    #+#             */
-/*   Updated: 2025/10/06 17:24:39 by jetan            ###   ########.fr       */
+/*   Updated: 2025/10/10 14:34:18 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Span::printValue()
 
 void Span::addManyNumbers(std::vector<int> nbr)
 {
-	if (nbr.size() + this->container.size() > N)
+	if (nbr.size() + this->container.size() > this->N)
 		throw fillException();
 	for (std::vector<int>::iterator it = nbr.begin(); it < nbr.end(); it++)
 	{
@@ -79,7 +79,7 @@ int	Span::shortestSpan()
 
 void Span::addNumber(int nbr)
 {
-	if (this->container.size() >= N)
+	if (this->container.size() >= this->N)
 		throw fillException();
 	this->container.push_back(nbr);
 }
@@ -91,14 +91,14 @@ Span::Span(unsigned int _n)
 	this->N = _n;
 }
 
-Span::Span(const Span &other): N(other.N) ,container(other.container) {}
+Span::Span(const Span &other): N(other.N), container(other.container) {}
 
 Span &Span::operator=(const Span &other)
 {
 	if (this != &other)
 	{
-		N = other.N;
-		container = other.container;
+		this->N = other.N;
+		this->container = other.container;
 	}
 	return *this;
 }
